@@ -1,0 +1,394 @@
+/*
+ * Copyright 2013-2016 Bettorware LLC.
+ *
+ *  Property of Bettorware(TM)
+ *  https://bettorware.com/
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+@namespace("com.bettorware.karera.drf.idl")
+
+
+protocol DrfDataTypes {
+	import idl "DrfDataEnums.avdl";
+	
+	/**
+	 * Represents details of a single past performance race.
+	 */
+	record DrfPpRace {
+	
+		union{null, string} raceDate = null;
+		int daysSincePrevious = 0;
+		union{null, string} trackCode = null;
+		union{null, string} brisTrackCode = null;
+		int raceNum = 0;
+		union{null, string} trackCondition = null;
+		double distance;
+		union{null, DrfRaceSurfaceType} surface = null;
+		boolean specialChute = false;
+		int numEntrants = 0;
+		int postPosition = 0;
+		union{null, string} equipment = null;
+		union{null, string} raceName = null;
+		union{null, DrfMedicationType} medication = null;
+		union{null, string} tripComment = null;
+		union{null, string} winnerName = null;
+		union{null, string} secondPlaceName = null;
+		union{null, string} thirdPlaceName = null;
+		int winnerWeightCarried = 0;
+		int secondPlaceWeightCarried = 0;
+		int thirdPlaceWeightCarried = 0;
+		double winnerMargin = 0.0;
+		double secondPlaceMargin = 0.0;
+		double thirdPlaceMargin = 0.0;
+		union{null, string} altExtraComment = null;
+		int weight = 0;
+		double odds = 0.0;
+		boolean isEntry = false;
+		union{null, string} raceClassification = null;
+		int claimingPrice = 0;
+		int purse = 0;
+		union{null, string} startCallPosition = null;
+		union{null, string} firstCallPosition = null;
+		union{null, string} secondCallPosition = null;
+		union{null, string} gateCallPosition = null;
+		union{null, string} stretchPosition = null;
+		union{null, string} finishPosition = null;
+		union{null, string} moneyPosition = null;
+		double startCallBtnLdrLengths = 0.0;
+		double startCallBtnLengthsOnly = 0.0;
+		double firstCallBtnLdrLengths = 0.0;
+		double firstCallBtnLengthsOnly = 0.0;
+		double secondCallBtnLdrLengths = 0.0;
+		double secondCallBtnLengthsOnly = 0.0;
+		int brisRaceShapeFirstCall = 0;
+		double stretchBtnLdrLengths = 0.0;
+		double stretchBtnLengthsOnly = 0.0;
+		double finishBtnLdrLengths = 0.0;
+		double finishBtnLengthsOnly = 0.0;
+		int brisRaceShapeSecondCall = 0;
+		int brisPaceFig2F = 0;
+		int brisPaceFig4F = 0;
+		int brisPaceFig6F = 0;
+		int brisPaceFig8F = 0;
+		int brisPaceFig10F = 0;
+		int brisLatePaceFig = 0;
+		int brisSpeedRating = 0;
+		int speedRating = 0;
+		int trackVariant = 0;
+		double fraction2F = 0.0;
+		double fraction3F = 0.0;
+		double fraction4F = 0.0;
+		double fraction5F = 0.0;
+		double fraction6F = 0.0;
+		double fraction7F = 0.0;
+		double fraction8F = 0.0;
+		double fraction10F = 0.0;
+		double fraction12F = 0.0;
+		double fraction14F = 0.0;
+		double fraction16F = 0.0;
+		double fraction1 = 0.0;
+		double fraction2 = 0.0;
+		double fraction3 = 0.0;
+		double finalTime = 0.0;
+		boolean claimed = false;
+		union{null, string} trainer = null;
+		union{null, string} jockey = null;
+		int apprenticeWtAllow = 0;
+		union{null, DrfRaceType} raceType = null;
+		union{null, string} ageSexRestrictions = null;
+		boolean statebred = false;
+		union{null, string} restrictedQualifierFlag = null;
+		boolean favorite = false;
+		boolean frontBandages = false;
+		int brisSpeedParForLevel = 0;
+		boolean barShoe = false;
+		int lowClaimingPrice = 0;
+		int highClaimingPrice = 0;
+		union{null, string} nasalStripOrOffTurf;
+		union{null, string} claimedFromAndTrainerSwitch1 = null;
+		int claimedFromAndTrainerSwitch2 = 0;
+		int claimedFromAndTrainerSwitch3 = 0;
+		int claimedFromAndTrainerSwitch4 = 0;
+		int claimedFromAndTrainerSwitch5 = 0;
+		double claimedFromAndTrainerSwitch6 = 0.0;
+		union{null, string} extendedStartComment = null;
+		boolean sealedTrack = false;
+		boolean allWeatherSurface = false;
+	}
+	
+	/**
+	 * Represents details of a single workout
+	 */
+	record DrfWorkout {
+		union{null, string} workoutDate = null;
+		double workoutTime = 0.0;
+		union{null, string} trackCode = null;
+		double distance = 0.0;
+		union{null, string} trackCondition = null;
+		union{null, string} workoutDescription = null;
+		union{DrfWorkoutTrackType, null} trackType = null;
+		int numWorkouts = 0;
+		int workoutRank = 0;
+	}
+	
+	/**
+	 * Stat category
+	 */
+	record DrfStatCategory {
+		union{null, string} label = null;
+		int starts = 0;
+		double winPct = 0.0;
+		double inTheMoneyPct = 0.0;
+		double returnOnInvestment = 0.0;
+	}
+	
+	/**
+	 * Represents details of horse's trainer
+	 */
+	record DrfTrainer {
+	
+		union{null, string} name = null;
+		int startsCurrentMeet = 0;
+		int winsCurrentMeet = 0;
+		int placesCurrentMeet = 0;
+		int showsCurrentMeet = 0;
+		int startsCurrentYear = 0;
+		int winsCurrentYear = 0;
+		int placesCurrentYear = 0;
+		int showsCurrentYear = 0;
+		double roiCurrentYear = 0.0;
+		int startsPreviousYear = 0;
+		int winsPreviousYear = 0;
+		int placesPreviousYear = 0;
+		int showsPreviousYear = 0;
+		double roiPreviousYear = 0.0;
+		union{array<DrfStatCategory>, null} keyStatCategories = null;
+	}
+	
+	/**
+	 * Represents details of horse's jockey
+	 */
+	record DrfJockey {
+	
+		union{null, string} name = null;
+		int apprenticeWtAllow = 0;
+		int startsCurrentMeet = 0;
+		int winsCurrentMeet = 0;
+		int placesCurrentMeet = 0;
+		int showsCurrentMeet = 0;
+		int startsCurrentYear = 0;
+		int winsCurrentYear = 0;
+		int placesCurrentYear = 0;
+		int showsCurrentYear = 0;
+		double roiCurrentYear = 0.0;
+		int startsPreviousYear = 0;
+		int winsPreviousYear = 0;
+		int placesPreviousYear = 0;
+		int showsPreviousYear = 0;
+		double roiPreviousYear = 0.0;
+		
+		union{null, string} distTurfLabel = null;
+		int distTurfStarts = 0;
+		int distTurfWins = 0;
+		int distTurfPlaces = 0;
+		int distTurfShows = 0;
+		double distTurfROI = 0.0;
+		int distTurfEarnings = 0;
+	}
+	
+	/**
+	 * Represents details of a single horse
+	 */
+	record DrfHorse {
+		
+		union{null, string} owner = null;
+		union{null, string} ownerSilks = null;
+		union{null, string} mainTrackOnlyOrAE = null;
+		union{null, string} programNumber = null;
+		double morningLineOdds;
+
+		union{null, string} name = null;
+		int yearOfBirth;
+		int foalingMonth;
+		union{null, string} sex = null;
+		union{null, string} color = null;
+		int weight;
+		union{null, string} sire = null;
+		union{null, string} sireOfSire = null;
+		union{null, string} dam = null;
+		union{null, string} sireOfDam = null;
+		union{null, string} breeder = null;
+		union{null, string} whereBred = null;
+		int postPosition;
+			
+		union{DrfMedicationType, null} medication = null;
+		union{DrfEquipmentChangeType, null} equipmentChange = null;
+			
+		int lifetimeStartsAtDistance = 0;
+		int lifetimeWinsAtDistance = 0;
+		int lifetimePlacesAtDistance = 0;
+		int lifetimeShowsAtDistance = 0;
+		int lifetimeEarningsAtDistance = 0;
+			
+		int lifetimeStartsAtTrack = 0;
+		int lifetimeWinsAtTrack = 0;
+		int lifetimePlacesAtTrack = 0;
+		int lifetimeShowsAtTrack = 0;
+		int lifetimeEarningsAtTrack = 0;
+			
+		int lifetimeStartsOnTurf = 0;
+		int lifetimeWinsOnTurf = 0;
+		int lifetimePlacesOnTurf = 0;
+		int lifetimeShowsOnTurf = 0;
+		int lifetimeEarningsOnTurf = 0;
+			
+		int lifetimeStartsOnWet = 0;
+		int lifetimeWinsOnWet = 0;
+		int lifetimePlacesOnWet = 0;
+		int lifetimeShowsOnWet = 0;
+		int lifetimeEarningsOnWet = 0;
+			
+		int currentYear = 0;
+		int currentYearStarts = 0;
+		int currentYearWins = 0;
+		int currentYearPlaces = 0;
+		int currentYearShows = 0;
+		int currentYearEarnings = 0;
+			
+		int previousYear = 0;
+		int previousYearStarts = 0;
+		int previousYearWins = 0;
+		int previousYearPlaces = 0;
+		int previousYearShows = 0;
+		int previousYearEarnings = 0;
+			
+		int lifetimeStarts = 0;
+		int lifetimeWins = 0;
+		int lifetimePlaces = 0;
+		int lifetimeShows = 0;
+		int lifetimeEarnings = 0;
+			
+		union{null, string} brisRunStyle = null;
+		int quirinStyleSpeedPts = 0;
+			
+		int trainerJockeyStarts365D = 0;
+		int trainerJockeyWins365D = 0;
+		int trainerJockeyPlaces365D = 0;
+		int trainerJockeyShows365D = 0;
+		double trainerJockeyROI365D = 0;
+		int daysSinceLastRace = 0;
+			
+		int lifetimeStartsAllWeatherSurf = 0;
+		int lifetimeWinsAllWeatherSurf = 0;
+		int lifetimePlacesAllWeatherSurf = 0;
+		int lifetimeShowsAllWeatherSurf = 0;
+		int lifetimeEarningsAllWeatherSurf = 0;
+		int bestBrisSpeedAllWeatherSurf = 0;			
+		
+		double brisPrimePowerRtg = 0.0;
+			
+		int sireStudFee = 0;
+		int bestBrisSpeedFast = 0;
+		int bestBrisSpeedTurf = 0;
+		int bestBrisSpeedOffTrack = 0;
+		int bestBrisSpeedDistance = 0;
+		
+		int auctionPrice = 0;
+		union{null, string} auctionDateLocSold = null;
+		
+		union{null, string} brisDirtPedigreeRtg = null;
+		union{null, string} brisMudPedigreeRtg = null;
+		union{null, string} brisTurfPedigreeRtg = null;
+		union{null, string} brisDistPedigreeRtg = null;
+		
+		int bestBrisSpeedLife = 0;
+		int bestBrisSpeedMostRecentYr = 0;
+		int  bestBrisSpeed2ndMostRecentYr = 0;
+		int bestBrisSpeedTodaysTrack = 0;
+		int numStartsFastDirt = 0;
+		int numWinsFastDirt = 0;
+		int numPlacesFastDirt = 0;
+		int numShowsFastDirt = 0;
+		int earningsFastDirt = 0;
+		
+		int trainerJockeyStartsMeet = 0;
+		int trainerJockeyWinsMeet = 0;
+		int trainerJockeyPlacesMeet = 0;
+		int trainerJockeyShowsMeet = 0;
+		double trainerJockeyROIMeet = 0.0;
+		
+		union{DrfTrainer, null} trainer = null;
+		union{DrfJockey, null} jockey = null;
+		union{array<DrfPpRace>, null} ppraces = null;
+		union{array<DrfWorkout>, null} workouts = null;
+	}
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	/**
+	 * Represents details of a single race.
+	 */
+	record DrfRace {
+
+		string track;
+		string raceDate;
+		int raceNum;
+		double distance;
+		union{DrfRaceSurfaceType, null} surface = null;
+		union{DrfRaceType, null} raceType = null;
+		union{null, string} ageSexRestrictions = null;
+		union{null, string} raceClassification = null;
+		int purse = 0;
+		int claimingPrice = 0;
+		int claimingPriceOfHorse = 0;
+		double trackRecord;
+		union{null, string} raceConditions = null;
+		union{null, string} completeRaceConditions = null;
+		union{array<string>, null} todaysLasixList = null;
+		union{array<string>, null} todaysButeList = null;
+		union{array<string>, null} todaysCoupledList = null;
+		union{array<string>, null} todaysMutuelList = null;
+		union{null, string} simulcastHostTrackCode = null;
+		int simulcastHostTrackRaceNum = 0;
+		boolean allWeatherSurface = false;
+		int lowClaimingPrice = 0;
+		boolean statebred = false;
+		union{array<string>, null} wagerTypes = null;
+		int brisPaceParForLevel2f = 0;
+		int brisPaceParForLevel4f = 0;
+		int brisPaceParForLevel6f = 0;
+		int brisSpeedParForLevel = 0;
+		int brisLatePaceParForLevel = 0;
+		union{null, string} postTime = null;
+		union{array<DrfHorse>, null} horses = null;
+	}
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	/**
+	 * A race card is a representation of Brisnet Single PP data file.
+	 */
+	record SingleFileDrf {
+		/** track code */
+		string track;
+		
+		/** meet date */
+		string meetDate;
+		
+		/** races in card */
+		array<DrfRace> races;
+	}
+	
+}

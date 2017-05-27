@@ -1,0 +1,114 @@
+/*
+ * Copyright 2013-2016 Bettorware LLC.
+ *
+ *  Property of Bettorware(TM)
+ *  https://bettorware.com/
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+@namespace("com.bettorware.karera.drf.idl")
+
+
+protocol DrfDataEnums {
+
+	//------------------------------------------------------------------------------------------------------------------
+	
+	enum DrfRaceSurfaceType {
+		DIRT,	// D
+		TURF,	// T
+		INNER_DIRT,	// d
+		INNER_TURF,	// t
+		STEEPLECHASE,	// s
+		HUNT	// h
+	}
+		
+
+	//------------------------------------------------------------------------------------------------------------------
+
+	enum DrfRaceType {
+		GRADE_1,	// G1
+		GRADE_2,	// G2
+		GRADE_3,	// G3
+		NON_GRADED,	// N
+		ALLOWANCE,	// A
+		STARTER_ALLOWANCE,	// R
+		STARTER_HANDICAP,	// T
+		CLAIMING,	// C
+		OPTIONAL_CLAIMING,	// CO
+		MAIDEN_SPECIAL_WEIGHT,	// S
+		MAIDEN_CLAIMING,	// M
+		ALLOWANCE_OPTIONAL_CLAIMING,	// AO
+		MAIDEN_OPTIONAL_CLAIMING,	// MO
+		OPTIONAL_CLAIMING_STAKES	// NO
+	}
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	enum DrfWorkoutTrackType {
+		MAIN_DIRT,	// MT
+		INNER_DIRT,	// IM
+		TRAINING_TRACK,	// TT
+		MAIN_TURF,	// T
+		INNER_TURF,	// IT
+		WOOD_CHIP,	// WC
+		HILLSIDE_COURSE,	// HC
+		TURF_TRAINING_TRACK,	// TN
+		INNER_TURF_TRAINING_TRACK,	// IN
+		TRAINING_RACE	// TR
+	}
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	enum DrfMedicationType {
+		NONE,	// 0
+		LASIX,	// 1
+		BUTE,	// 2
+		BUTE_LASIX,	// 3
+		LASIX_FIRST,	// 4
+		BUTE_LASIX_FIRST,	// 5
+		UNAVAILABLE	// 9
+	}
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	enum DrfEquipmentChangeType {
+		NO_CHANGE,	// 0
+		BLINKERS_ON,	// 1
+		BLINKERS_OFF,	// 2
+		UNAVAILABLE	// 9
+	}
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	enum DrfNasalStripChangeType {
+		NO_CHANGE,	// 0
+		NASAL_STRIP_ON,	// 1
+		NASAL_STRIP_OFF,	// 2
+		UNAVAILABLE	// 9
+	}
+	
+	
+	
+	//------------------------------------------------------------------------------------------------------------------
+
+	enum DrfFileFormat {
+		SINGLE_FILE_DRF,
+		MULTI_FILE_DRF,
+		MULTI_FILE_DR2,
+		MULTI_FILE_DR3,
+		MULTI_FILE_DR4
+	}
+
+
+}

@@ -13,4 +13,4 @@ Code Example:
 SingleFileDrf drf = SingleFileDrfParser.parse("AQU0101.DRF");
 List<DrfRace> races = drf.getRaces();
 ```
-The **parse** can accept arguments of type String (file path), File, Reader, and InputStream.
+The **parse** method can accept arguments of type String (file path), File, Reader, and InputStream.

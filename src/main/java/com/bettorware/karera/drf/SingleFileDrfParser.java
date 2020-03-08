@@ -144,6 +144,7 @@ public class SingleFileDrfParser {
 				
 				DrfHorse.Builder horseBuilder = DrfHorse.newBuilder();
 				horseBuilder
+					.setPostPosition(getInt(line[3]))
 					.setOwner(getString(line[38]))
 					.setOwnerSilks(getString(line[39]))
 					.setMainTrackOnlyOrAE(getString(line[40]))
@@ -161,7 +162,6 @@ public class SingleFileDrfParser {
 					.setSireOfDam(getString(line[54]))
 					.setBreeder(getString(line[55]))
 					.setWhereBred(getString(line[56]))
-					.setPostPosition(getInt(line[57]))
 					.setMedication(DrfDecoder.toMedicationType(line[61]))
 					.setEquipmentChange(DrfDecoder.toEquipmentChangeType(line[63]))
 					.setLifetimeStartsAtDistance(getInt(line[64]))

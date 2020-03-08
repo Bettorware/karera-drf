@@ -52,6 +52,7 @@ public class SingleFileDrfParserTest {
 				System.out.println(h.getName());
 				DrfTrainer trainer = h.getTrainer();
 				System.out.println("Trainer: " + trainer.getName());
+				System.out.println("Post Position = " + h.getPostPosition());
 				for (DrfStatCategory stat : trainer.getKeyStatCategories()) {
 					System.out.println(stat.getLabel());
 				}
@@ -65,6 +66,12 @@ public class SingleFileDrfParserTest {
 				
 				System.out.println(h.getPpraces().size() + " PP races");
 				System.out.println();
+				if (h.getPpraces().size() > 1) {
+					System.out.println("bris spd rtg = " + h.getPpraces().get(0).getBrisSpeedRating());
+					System.out.println("spd rtg = " + h.getPpraces().get(0).getSpeedRating());
+					System.out.println("race classification = " + h.getPpraces().get(0).getRaceClassification());
+					System.out.println("race type = " + h.getPpraces().get(0).getRaceType());
+				}
 			}
 			System.out.println();
 		}
